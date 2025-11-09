@@ -1,7 +1,7 @@
 import { Controller } from "@nestjs/common";
 import { MessagePattern } from "@nestjs/microservices";
 
-@Controller('orders')
+@Controller()
 export class OrdersController {
     @MessagePattern('create_order')
     async create_order(order: any) {
