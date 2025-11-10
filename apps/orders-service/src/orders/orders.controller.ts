@@ -13,6 +13,6 @@ export class OrdersController {
   async create_order(order: any) {
     console.log({ message: 'Order Received', order });
     this.productRedisClient.emit('order.created', order);
-    return { message: 'Created Order', order };
+    return this.productRedisClient.send('get_product', {});
   }
 }

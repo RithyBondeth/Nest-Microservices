@@ -7,13 +7,13 @@ export class ProductsController {
   async getProduct(id: number) {
     return {
       message: 'Products',
-      products: { id, name: `Product ${id}`, price: 100 },
+      products: { id, name: `Product ${id}` },
     };
   }
 
   @EventPattern('order.created')
-  async updateStock(order: { id: number, productId: number }) {
-    console.log("Checking stock for the product: ", order.productId);
-    console.log("Stock Updated!!!");
+  async updateStock(order: { id: number; productId: number }) {
+    console.log('Checking stock for the product: ', order.productId);
+    console.log('Stock Updated!!!');
   }
 }
